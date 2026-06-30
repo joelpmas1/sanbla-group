@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comparador Sanbla Group</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,500&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --teal:#2CA2A4; --teal-deep:#239193; --green-lt:#94CFB1; --green:#80B299;
+    --ink:#0A1215; --ink-2:#0F2024; --ink-3:#14262A; --ink-4:#1A2F34;
+    --grad:radial-gradient(140% 165% at 124% 100%,#80B299,#239193);
+    --grad-text:linear-gradient(110deg,#94CFB1,#2CA2A4);
+    --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.16);
+    --on:#F4F8F7; --mut:#A0B0B2; --faint:#6A7A7C;
+    --mono:"Geist Mono",ui-monospace,monospace;
+    --serif:"Newsreader",Georgia,serif;
+    --body:"Geist",system-ui,-apple-system,sans-serif;
+    --gutter:clamp(20px,5vw,56px);
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--ink); color:var(--on); font-family:var(--body); -webkit-font-smoothing:antialiased; min-height:100vh; }
+
+  /* bg glow */
+  .bg { position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(52% 48% at 88% 4%,  rgba(44,162,164,.24), transparent 60%),
+      radial-gradient(44% 52% at 4%  96%,  rgba(128,178,153,.18), transparent 60%); }
+
+  .wrap { position:relative; z-index:1; max-width:1160px; margin:0 auto; padding-inline:var(--gutter); }
+
+  /* ---- Header ---- */
+  .header { padding-block:28px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+  .logo-row { display:inline-flex; align-items:center; gap:12px; }
+  .logo-mark { width:38px; height:38px; border-radius:11px; flex:none; }
+  .logo-text { display:flex; flex-direction:column; line-height:1; }
+  .logo-text b { font-family:var(--serif); font-weight:600; font-size:19px; color:var(--on); }
+  .logo-text span { font-family:var(--mono); font-size:9.5px; letter-spacing:.26em; text-transform:uppercase; color:var(--faint); margin-top:5px; }
+  .header-badge { font-family:var(--mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; padding:8px 16px; border-radius:100px; background:rgba(44,162,164,.12); color:var(--green-lt); border:1px solid rgba(44,162,164,.2); }
+
+  /* ---- Hero text ---- */
+  .hero-text { padding-block:clamp(36px,7vw,72px) clamp(28px,5vw,52px); }
+  .kicker { display:inline-flex; align-items:center; gap:10px; font-family:var(--mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--teal); }
+  .kicker::before { content:""; width:26px; height:1.5px; background:var(--grad); }
+  h1 { font-family:var(--serif); font-weight:500; font-size:clamp(32px,5vw,54px); line-height:1.04; letter-spacing:-.02em; margin:16px 0 0; max-width:22ch; }
+  h1 em { font-style:italic; background:var(--grad-text); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .lede { color:var(--mut); font-size:18px; font-weight:300; margin-top:16px; max-width:64ch; line-height:1.62; }
+
+  /* ---- Comparison card ---- */
+  .cmp { background:var(--ink-2); border:1px solid var(--line); border-radius:26px; overflow:hidden; margin-bottom:64px; }
+  .cmp-header { padding:24px 30px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .cmp-header .cidx { font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--faint); }
+  .cmp-header h2 { font-family:var(--serif); font-weight:500; font-size:22px; margin:6px 0 0; color:#fff; }
+  .cmp-header .cpill { margin-left:auto; font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:7px 14px; border-radius:100px; background:rgba(44,162,164,.14); color:var(--green-lt); border:1px solid rgba(44,162,164,.18); }
+  .vers { display:grid; grid-template-columns:1fr 1fr; }
+  .ver { padding:28px 30px; display:flex; flex-direction:column; }
+  .ver + .ver { border-left:1px solid var(--line); }
+  .ver-tag { font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); }
+  .ver h3 { font-family:var(--serif); font-weight:500; font-size:21px; margin:8px 0 0; color:rgba(255,255,255,.88); }
+  .ver p { color:var(--mut); font-size:14px; font-weight:300; margin-top:10px; line-height:1.55; min-height:56px; }
+  /* diffs list */
+  .diffs { margin-top:16px; display:flex; flex-direction:column; gap:8px; }
+  .diff { display:flex; align-items:flex-start; gap:9px; font-size:13.5px; color:var(--mut); font-weight:300; }
+  .diff::before { content:"→"; color:var(--teal); flex:none; margin-top:1px; }
+  /* thumbnail */
+  .shot { margin-top:20px; border-radius:14px; overflow:hidden; border:1px solid var(--line); aspect-ratio:16/10; background:var(--ink-3); position:relative; }
+  .shot iframe { position:absolute; top:0; left:0; width:1280px; height:800px; transform:scale(.366); transform-origin:top left; border:0; pointer-events:none; }
+  /* cta buttons */
+  .ver-cta { margin-top:20px; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; font-family:var(--body); font-weight:500; font-size:15px; padding:13px 24px; border-radius:100px; text-decoration:none; transition:transform .18s ease, box-shadow .18s ease, background .18s ease; white-space:nowrap; }
+  .btn svg { width:15px; height:15px; }
+  .btn-ghost { background:rgba(255,255,255,.06); color:#fff; border:1px solid var(--line2); }
+  .btn-ghost:hover { background:rgba(255,255,255,.12); }
+  .btn-primary { background:var(--grad); color:#fff; border:none; box-shadow:0 12px 28px -12px rgba(35,145,147,.52); }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 18px 36px -14px rgba(35,145,147,.65); }
+
+  /* single-ver card */
+  .cmp-single .vers { grid-template-columns:1fr; max-width:none; }
+  .cmp-single > .cmp { cursor:pointer; transition:border-color .2s ease, transform .2s ease; }
+  .cmp-single > .cmp:hover { border-color:rgba(44,162,164,.4); transform:translateY(-3px); }
+
+  /* ---- Info cards at bottom ---- */
+  .info { display:grid; grid-template-columns:1fr 1fr; gap:18px; padding-bottom:72px; }
+  .icard { border:1px solid var(--line); border-radius:18px; padding:26px; background:rgba(255,255,255,.02); }
+  .icard .itag { font-family:var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--teal); }
+  .icard p { color:var(--mut); font-size:13.5px; font-weight:300; line-height:1.7; margin-top:10px; }
+
+  /* ---- Responsive ---- */
+  @media (max-width:720px) {
+    .vers { grid-template-columns:1fr; }
+    .ver + .ver { border-left:none; border-top:1px solid var(--line); }
+    .info { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#94CFB1"/>
+      <stop offset="1" stop-color="#239193"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- HEADER -->
+<div class="wrap">
+  <div class="header">
+    <a class="logo-row" href="sanbla-group/index.html" aria-label="Sanbla Group — directorio">
+      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="11" fill="url(#lg)"/>
+        <path d="M26.5 14.5C25 12.8 22.7 12 20.2 12c-3.4 0-5.7 1.6-5.7 4 0 5.6 12.9 2.8 12.9 8.7 0 2.7-2.7 4.5-6.6 4.5-2.9 0-5.4-1-6.8-2.9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text"><b>Sanbla Group</b><span>Comparador</span></span>
+    </a>
+    <span class="header-badge">Uso interno</span>
+  </div>
+</div>
+
+<!-- HERO TEXT -->
+<div class="wrap">
+  <div class="hero-text">
+    <span class="kicker">Comparador Sanbla Group</span>
+    <h1>Todas las landings. <em>En un sitio.</em></h1>
+    <p class="lede">Accede a cada landing de Sanbla Consultoría directamente desde aquí. Haz clic en cualquier tarjeta para abrirla a pantalla completa.</p>
+  </div>
+
+  <!-- CARDS -->
+  <div class="cmp-single" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:0;">
+
+    <a class="cmp" href="sg-home-v1.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">01 &middot; Home</span><h2>Home</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero, programas, enfoque, casos, Javier, decisiones, FAQ y cierre.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-concurso-acreedores-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">03 &middot; Servicio</span><h2>Concurso de acreedores</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero SEO, &iquest;Qu&eacute; es?, casos, split &ldquo;lo que nadie te dice&rdquo;, proceso, numband 91,7%, FAQ con schema (7 preguntas) y formulario cualificado.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-reestructuracion-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">02 &middot; Servicio</span><h2>Reestructuraci&oacute;n empresarial</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero SEO, &iquest;Qu&eacute; es?, casos, proceso, numband 81,3%, FAQ con schema y formulario cualificado.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-vender-empresa-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">04 &middot; Servicio</span><h2>Vender mi empresa</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero, stats, casos, comparativa br&oacute;ker vs Sanbla, serpentino, numband 93%, FAQ y cierre.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-catalogo-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">05 &middot; Servicio</span><h2>Cat&aacute;logo de empresas en venta</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero, 2 tarjetas de empresa, split &ldquo;buscamos lo que quieres&rdquo; y formulario.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-detalles-empresa-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">06 &middot; Cat&aacute;logo</span><h2>Detalle empresa &middot; SRV-BCN-001</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Perfil con key facts, descripci&oacute;n, 3 cards de criterio, razones y formulario.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-decisiones-reales-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">07 &middot; Hub</span><h2>Decisiones Reales</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero, tabs de filtro, grid de 12 casos en 2 columnas y banner de cierre.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-articulo-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">08 &middot; Caso real</span><h2>Art&iacute;culo / Caso real</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero serif, stats, cuerpo editorial, 3 cards de an&aacute;lisis, desenlace dark y banner de programa.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-sobre-nosotros-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">09 &middot; Empresa</span><h2>Sobre nosotros</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero, intro split, metodolog&iacute;a en 3 cards oscuras, equipo 4 columnas, banda Javier y formulario.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-sobre-javier-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">10 &middot; Empresa</span><h2>Sobre Javier S&aacute;nchez</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero split foto+texto, trayectoria, c&oacute;mo trabajo, stats 5 columnas y cierre.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+    <a class="cmp" href="sg-contacto-v2.html" style="text-decoration:none;display:block;">
+      <div class="cmp-header"><div><span class="cidx">11 &middot; Contacto</span><h2>Contacto</h2></div><span class="cpill">disponible</span></div>
+      <div class="vers"><div class="ver"><span class="ver-tag">Estilo Finance v2</span><p>Hero degradado, 3 canales de contacto, formulario sobre fondo claro, ciudades e info.</p><div class="ver-cta"><span class="btn btn-primary">Ver landing &rarr;</span></div></div></div>
+    </a>
+
+  </div>
+
+  <!-- INFO CARDS -->
+  <div class="info">
+    <div class="icard"><span class="itag">C&oacute;mo usar</span><p>Haz clic en cualquier tarjeta para abrir la landing a pantalla completa dentro del visor. Usa el bot&oacute;n atr&aacute;s para volver al comparador.</p></div>
+    <div class="icard"><span class="itag">C&oacute;mo a&ntilde;adir landings</span><p>Cada vez que se termina una nueva p&aacute;gina de servicio se a&ntilde;ade aqu&iacute; autom&aacute;ticamente. Todas usan el mismo sistema de dise&ntilde;o Finance v2.</p></div>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#94CFB1"/><stop offset="1" stop-color="#239193"/></linearGradient></defs>
+    <rect width="100" height="100" rx="22" fill="#0F2024"/>
+    <rect x="12" y="28" width="34" height="44" rx="7" fill="rgba(44,162,164,.18)" stroke="rgba(44,162,164,.3)" stroke-width="1"/>
+    <rect x="54" y="28" width="34" height="44" rx="7" fill="url(#tg)" opacity=".7"/>
+    <rect x="18" y="36" width="22" height="4" rx="2" fill="rgba(255,255,255,.3)"/>
+    <rect x="18" y="44" width="16" height="3" rx="1.5" fill="rgba(255,255,255,.2)"/>
+    <rect x="60" y="36" width="22" height="4" rx="2" fill="rgba(255,255,255,.5)"/>
+    <rect x="60" y="44" width="16" height="3" rx="1.5" fill="rgba(255,255,255,.35)"/>
+  </svg>
+</template>
+
+</body>
+</html>

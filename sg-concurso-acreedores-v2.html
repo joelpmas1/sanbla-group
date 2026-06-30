@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Concurso de acreedores | Cierre ordenado | Sanbla</title>
+<meta name="description" content="Cerramos tu empresa de forma ordenada con el concurso de acreedores. Te protegemos como administrador, sin incidencias legales posteriores. Te llamamos en 24h." />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="sanbla/styles-v2.css" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Qué es un concurso de acreedores y cuándo conviene presentarlo?","acceptedAnswer":{"@type":"Answer","text":"El concurso de acreedores es el procedimiento legal para cerrar de forma ordenada una empresa que ya no puede pagar sus deudas, protegiendo a quien la administra. Conviene presentarlo cuando la empresa ha dejado de ser viable y seguir adelante solo aumenta la deuda y el riesgo del administrador."}},
+  {"@type":"Question","name":"¿Puedo cerrar mi empresa si tengo deudas con Hacienda, Seguridad Social o proveedores?","acceptedAnswer":{"@type":"Answer","text":"Sí. De hecho es lo más habitual. La clave es hacerlo en el orden correcto y con las garantías legales para que esas deudas no se trasladen a tu patrimonio personal."}},
+  {"@type":"Question","name":"¿Cuánto cuesta cerrar una empresa?","acceptedAnswer":{"@type":"Answer","text":"Depende del camino y la complejidad. Te explicamos el coste con total transparencia tras la primera reunión, que es gratuita y sin compromiso."}},
+  {"@type":"Question","name":"¿Cuánto tarda el proceso?","acceptedAnswer":{"@type":"Answer","text":"Entre 3 y 5 meses de media, según el camino y la situación de partida. En la primera conversación te damos plazos reales para tu caso."}},
+  {"@type":"Question","name":"¿Puedo cerrar si todavía tengo empleados?","acceptedAnswer":{"@type":"Answer","text":"Sí. Gestionamos el proceso laboral en paralelo, cumpliendo con todas las obligaciones y protegiendo tanto a la empresa como a las personas implicadas."}},
+  {"@type":"Question","name":"¿Qué pasa con mis deudas personales como administrador?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos tu protección en paralelo al cierre: avales, responsabilidad personal y, cuando procede, la Ley de Segunda Oportunidad para cancelar deudas personales."}},
+  {"@type":"Question","name":"¿Puedo cerrar yo solo sin ayuda profesional?","acceptedAnswer":{"@type":"Answer","text":"Legalmente puedes intentarlo, pero los errores en el orden o en los plazos son los que acaban generando responsabilidad personal. Acompañarte bien es precisamente lo que evita ese riesgo."}}
+]}
+</script>
+
+<style>
+  .casos-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .rail-nav{display:flex;gap:10px;}
+  .rail-nav button{width:46px;height:46px;border-radius:100px;border:1px solid var(--line-2);background:var(--surface);color:var(--text-strong);cursor:pointer;display:grid;place-items:center;transition:all .15s ease;}
+  .rail-nav button:hover{border-color:var(--accent);color:var(--accent);}
+  .rail-nav svg{width:18px;height:18px;}
+  .casos-rail{display:flex;gap:20px;margin-top:44px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x mandatory;scrollbar-width:none;}
+  .casos-rail::-webkit-scrollbar{display:none;}
+  .caso-card{position:relative;flex:0 0 360px;min-height:360px;border-radius:var(--r-xl);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;color:#fff;isolation:isolate;scroll-snap-align:start;box-shadow:var(--sh-md);transition:transform .25s ease;text-decoration:none;}
+  .caso-card:hover{transform:translateY(-4px);}
+  .caso-card image-slot{position:absolute;inset:0;width:100%;height:100%;z-index:-2;}
+  .caso-card::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,18,20,.15) 0%,rgba(8,18,20,.55) 50%,rgba(8,18,20,.93) 100%);}
+  .caso-card.teal::after{background:linear-gradient(180deg,rgba(18,168,146,.3) 0%,rgba(11,110,99,.72) 58%,rgba(8,18,20,.95) 100%);}
+  .caso-card .cs-tag{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-300);}
+  .caso-card h3{color:#fff;font-size:22px;font-weight:500;margin-top:auto;padding-top:84px;line-height:1.18;}
+  .caso-card p{color:rgba(255,255,255,.78);font-size:13px;margin-top:10px;}
+  .proc{max-width:860px;margin:56px auto 0;position:relative;}
+  .proc::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(18,168,146,.35) 15%,rgba(18,168,146,.35) 85%,transparent);transform:translateX(-50%);}
+  .pstep{display:grid;grid-template-columns:1fr 1fr;position:relative;margin-bottom:4px;}
+  .pstep::before{content:"";position:absolute;left:50%;top:26px;width:12px;height:12px;border-radius:100px;background:var(--grad);transform:translateX(-50%);box-shadow:0 0 0 4px rgba(18,168,146,.18);}
+  .pcard{padding:20px 32px 24px;}
+  .pstep:nth-child(odd) .pcard{grid-column:1;text-align:right;border-right:1.5px solid rgba(18,168,146,.3);}
+  .pstep:nth-child(even) .pcard{grid-column:2;border-left:1.5px solid rgba(18,168,146,.3);}
+  .pnum{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-strong);}
+  .pstep h3{font-size:21px;font-weight:500;margin-top:8px;}
+  .pstep p{margin-top:10px;color:var(--muted);font-size:15px;max-width:38ch;line-height:1.55;}
+  .numband{position:relative;border-radius:var(--r-2xl);overflow:hidden;padding:clamp(40px,5vw,64px);background:var(--ink-850);color:#fff;display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:center;}
+  .numband::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 0% 100%,rgba(18,168,146,.3),transparent 60%);pointer-events:none;}
+  .numband h2{position:relative;color:#fff;font-size:clamp(26px,3.2vw,42px);font-weight:500;}
+  .numband h2 em{font-style:italic;color:var(--teal-300);}
+  .numband p{position:relative;color:var(--on-dark-muted);font-size:15.5px;line-height:1.6;}
+  .formsec{background:var(--ink-950);position:relative;overflow:hidden;}
+  .formsec::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 5% 0%,rgba(18,168,146,.2),transparent 55%);}
+  .form-grid2{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,90px);align-items:start;}
+  .form-copy h2{color:#fff;font-size:clamp(28px,3.4vw,42px);font-weight:500;}
+  .form-copy h2 em{font-style:italic;color:var(--teal-300);}
+  .form-copy .lede{margin-top:18px;color:var(--on-dark-muted);font-size:18px;max-width:44ch;}
+  .form-copy .fine{margin-top:28px;color:var(--on-dark-faint);font-size:13.5px;max-width:42ch;line-height:1.65;}
+  .form-card{background:var(--surface);border-radius:var(--r-2xl);padding:clamp(28px,3vw,44px);box-shadow:var(--sh-lg);position:relative;}
+  .form-card .fc-badge{position:absolute;top:-14px;right:28px;font-family:var(--font-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:var(--grad);color:#fff;padding:7px 14px;border-radius:999px;box-shadow:var(--sh-teal);}
+  .form-card h3{font-size:23px;font-weight:500;}
+  .form-card .sub{color:var(--muted);font-size:15px;margin-top:7px;margin-bottom:24px;}
+  .fgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px 18px;}
+  .field{display:flex;flex-direction:column;gap:7px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:13.5px;font-weight:600;color:var(--text-strong);}
+  .field input,.field select{font-family:var(--font-body);font-size:15.5px;color:var(--text-strong);padding:13px 14px;border-radius:var(--r-sm);border:1px solid var(--line-2);background:#fff;transition:border-color .15s,box-shadow .15s;width:100%;appearance:none;}
+  .field input::placeholder{color:var(--text-faint);}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(18,168,146,.14);}
+  .sel-wrap{position:relative;}
+  .sel-wrap::after{content:"";position:absolute;right:14px;top:50%;width:9px;height:9px;border-right:2px solid var(--text-muted);border-bottom:2px solid var(--text-muted);transform:translateY(-65%) rotate(45deg);pointer-events:none;}
+  .consent{grid-column:1/-1;display:flex;gap:11px;align-items:flex-start;}
+  .consent input{width:19px;height:19px;margin-top:2px;accent-color:var(--accent);flex:none;}
+  .consent label{font-size:13.5px;color:var(--muted);}
+  .consent a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;}
+  .fsub{grid-column:1/-1;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+  .fnote{color:var(--text-faint);font-size:13px;}
+  @media(max-width:900px){.proc::before{display:none;}.pstep{grid-template-columns:1fr;}.pstep:nth-child(odd) .pcard,.pstep:nth-child(even) .pcard{grid-column:1;text-align:left;border-left:1.5px solid rgba(18,168,146,.3);border-right:none;padding-left:22px;}.pstep::before{left:0;transform:none;}.numband{grid-template-columns:1fr;}.form-grid2{grid-template-columns:1fr;}.fgrid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36D8BD"/><stop offset="1" stop-color="#0B6E63"/></linearGradient></defs></svg>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="logo" href="sg-home-v1.html"><svg class="logo-mark" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#lg)"/><path d="M26.5 14.5C25 12.8 22.7 12 20.2 12c-3.4 0-5.7 1.6-5.7 4 0 5.6 12.9 2.8 12.9 8.7 0 2.7-2.7 4.5-6.6 4.5-2.9 0-5.4-1-6.8-2.9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="logo-text"><b>Sanbla</b><span>Consultoría</span></span></a>
+    <nav class="nav-links"><a href="sg-home-v1.html">Inicio</a><a href="sg-decisiones-reales-v2.html">Decisiones reales</a><a href="sg-sobre-nosotros-v2.html">Sobre nosotros</a><a href="sg-contacto-v2.html">Contacto</a></nav>
+    <div class="nav-right"><a href="#form" class="btn btn-primary"><span>Pide una primera reunión</span></a><button class="menu-btn" aria-label="Menú"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="4" y1="8" x2="20" y2="8"/><line x1="4" y1="16" x2="20" y2="16"/></svg></button></div>
+  </div>
+</header>
+
+<!-- 1 · HERO -->
+<section class="hero">
+  <div class="hero-media"><image-slot id="ca-hero" shape="rect" fit="cover" placeholder="Foto hero · persona caminando / pasillo sobrio"></image-slot></div>
+  <div class="hero-scrim"></div>
+  <div class="hero-mesh"></div>
+  <svg class="hero-motif" viewBox="0 0 600 800" fill="none" aria-hidden="true" preserveAspectRatio="xMaxYMid slice"><g stroke="url(#lg)" stroke-width="1.2" opacity="0.5"><path d="M620 60C420 120 460 260 300 320 140 380 180 520 -20 580"/><path d="M620 140C420 200 460 340 300 400 140 460 180 600 -20 660"/><path d="M620 -20C420 40 460 180 300 240 140 300 180 440 -20 500"/></g></svg>
+  <div class="wrap hero-inner">
+    <div class="hero-content">
+      <span class="kicker">Concurso de acreedores</span>
+      <h1>Concurso de acreedores: has decidido cerrar. <span class="accent"><em>Lo que importa ahora es hacerlo bien.</em></span></h1>
+      <p class="hero-lede">Cerrar bien es una decisión empresarial, no un fracaso. Nos hacemos cargo del proceso completo —diagnóstico, ejecución y protección del administrador— de principio a fin, antes de que tengas que improvisar nada.</p>
+      <div class="hero-cta">
+        <a href="#form" class="btn btn-primary btn-lg"><span>Pide una primera reunión</span></a>
+        <a href="tel:+34634283089" class="btn btn-ghost-dark btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>634 28 30 89</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · STATS -->
+<section class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat reveal"><div class="num" data-count="87" data-prefix="+">0</div><div class="lbl">Empresas cerradas correctamente</div></div>
+    <div class="stat reveal d1"><div class="num">96,3<span class="u">%</span></div><div class="lbl">Sin incidencias legales posteriores</div></div>
+    <div class="stat reveal d2"><div class="num">3–5 <span class="u">meses</span></div><div class="lbl">Duración media del proceso</div></div>
+    <div class="stat reveal d3"><div class="num" data-count="30" data-suffix="+">0</div><div class="lbl">Años haciendo esto</div></div>
+  </div>
+</section>
+
+<!-- 3 · ¿QUÉ ES / CUÁNDO -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="kicker center">Cuándo presentarlo</span>
+      <h2>¿Qué es un concurso de acreedores y cuándo <em>conviene presentarlo?</em></h2>
+      <p class="lede">El concurso de acreedores es el procedimiento legal para cerrar de forma ordenada una empresa que ya no puede pagar sus deudas, protegiendo a quien la administra. No es un final improvisado: es hacer las cosas en el orden correcto para que el cierre no se convierta en un problema personal.</p>
+      <p class="lede" style="margin-top:14px;">Conviene presentarlo cuando la empresa ha dejado de ser viable y seguir adelante solo aumenta la deuda y el riesgo del administrador. Estas son situaciones reales en las que hemos estado:</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · CASOS REALES -->
+<section class="section">
+  <div class="wrap">
+    <div class="casos-head reveal">
+      <div class="section-head" style="margin:0;"><span class="kicker">Casos de estudio</span><h2 style="margin-top:14px;">Situaciones reales con <em>decisiones reales</em></h2></div>
+      <div class="rail-nav">
+        <button data-rail-prev="ca1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button data-rail-next="ca1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+      </div>
+    </div>
+    <div class="casos-rail" data-rail="ca1">
+      <a class="caso-card" href="sg-articulo-v2.html"><image-slot id="ca-c1" shape="rect" fit="cover" placeholder="Foto · startup tecnológica"></image-slot><span class="cs-tag">Cierre empresarial</span><h3>Una startup tecnológica que supo parar antes del desastre</h3><p>Tecnología SaaS · 8 empleados · Madrid · 310.000 €/año</p></a>
+      <a class="caso-card teal" href="sg-articulo-v2.html"><image-slot id="ca-c2" shape="rect" fit="cover" placeholder="Foto · empresa industrial"></image-slot><span class="cs-tag">Cierre empresarial</span><h3>Una empresa industrial que cerró protegiendo 30 años de trabajo</h3><p>Metalúrgico · 23 empleados · Vallès Occidental · 1.400.000 €/año</p></a>
+      <a class="caso-card" href="sg-articulo-v2.html"><image-slot id="ca-c3" shape="rect" fit="cover" placeholder="Foto · restauración"></image-slot><span class="cs-tag">Cierre empresarial</span><h3>Una cadena de restauración que supo cerrar a tiempo</h3><p>Hostelería · 14 empleados · Barcelona · 820.000 €/año</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · LO QUE NADIE TE DICE -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap split">
+    <div class="split-media reveal"><image-slot id="ca-split" shape="rect" fit="cover" placeholder="Foto · reunión / dos personas"></image-slot></div>
+    <div class="split-copy reveal d1">
+      <span class="kicker">Lo que nadie te dice</span>
+      <h2 style="margin-top:16px;">Cerrar una empresa no afecta solo al negocio. <em>También afecta a quien firma.</em></h2>
+      <p>El administrador puede quedar expuesto a responsabilidades personales, deudas no cubiertas y consecuencias legales si el cierre no se hace bien. En cada proceso que acompañamos, trabajamos la protección del administrador en paralelo al cierre de la empresa.</p>
+      <a href="#form" class="btn btn-ghost-light" style="margin-top:26px;align-self:flex-start;">Pide una primera reunión</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · EL PROCESO -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="kicker center">El proceso</span>
+      <h2>Decidir en el orden correcto para <em>cerrar bien tu empresa</em></h2>
+      <p class="lede">Cada fase tiene su momento. Saltarse el orden es lo que genera responsabilidad personal.</p>
+    </div>
+    <div class="proc reveal">
+      <div class="pstep"><div class="pcard"><span class="pnum">01</span><h3>Entender la situación real</h3><p>Analizamos la empresa, las deudas reales, los avales y los compromisos personales, sin filtros ni rodeos.</p></div></div>
+      <div class="pstep"><div class="pcard"><span class="pnum">02</span><h3>Definir el camino de cierre</h3><p>Definimos el camino: concurso de acreedores, disolución ordenada o acuerdo extrajudicial. Decides con toda la información.</p></div></div>
+      <div class="pstep"><div class="pcard"><span class="pnum">03</span><h3>Ejecutar y cerrar bien</h3><p>Llevamos a cabo el proceso con todas las garantías legales hasta que la empresa queda cerrada de forma correcta y sin responsabilidades.</p></div></div>
+      <div class="pstep"><div class="pcard"><span class="pnum">04</span><h3>Proteger a la persona</h3><p>Blindamos al administrador frente a responsabilidad personal: deudas, avales y la Ley de Segunda Oportunidad cuando procede.</p></div></div>
+    </div>
+    <div class="center-cta reveal"><a href="#form" class="btn btn-primary btn-lg"><span>Pide una primera reunión</span></a></div>
+  </div>
+</section>
+
+<!-- 7 · AUTORIDAD -->
+<section class="section" style="background:var(--paper-2);">
+  <div class="wrap">
+    <div class="numband reveal">
+      <h2>El <em>91,7%</em> de los administradores que acompañamos quedaron protegidos de responsabilidad personal.</h2>
+      <p>Cerrar una empresa mal puede perseguirte durante años. Hacerlo con Sanbla significa que el concurso acaba cuando acaba: sin sorpresas legales, sin cargas a futuro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · FAQ -->
+<section class="section faq-wrap">
+  <div class="wrap">
+    <div class="section-head reveal"><span class="kicker">Preguntas frecuentes</span><h2>Preguntas que nos hacen <em>siempre</em></h2></div>
+    <div class="faq-list reveal">
+      <div class="faq-item"><button class="faq-q">¿Qué es un concurso de acreedores y cuándo conviene presentarlo?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">El concurso de acreedores es el procedimiento legal para cerrar de forma ordenada una empresa que ya no puede pagar sus deudas, protegiendo a quien la administra. Conviene presentarlo cuando la empresa ha dejado de ser viable y seguir adelante solo aumenta la deuda y el riesgo del administrador.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Puedo cerrar si tengo deudas con Hacienda, Seguridad Social o proveedores?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Sí. De hecho es lo más habitual. La clave es hacerlo en el orden correcto y con las garantías legales para que esas deudas no se trasladen a tu patrimonio personal.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Cuánto cuesta cerrar una empresa?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Depende del camino y la complejidad. Te explicamos el coste con total transparencia tras la primera reunión, que es gratuita y sin compromiso.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Cuánto tarda el proceso?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Entre 3 y 5 meses de media, según el camino y la situación de partida. En la primera conversación te damos plazos reales para tu caso.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Puedo cerrar si todavía tengo empleados?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Sí. Gestionamos el proceso laboral en paralelo, cumpliendo con todas las obligaciones y protegiendo tanto a la empresa como a las personas implicadas.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Qué pasa con mis deudas personales como administrador?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Trabajamos tu protección en paralelo al cierre: avales, responsabilidad personal y, cuando procede, la Ley de Segunda Oportunidad para cancelar deudas personales.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Puedo cerrar yo solo sin ayuda profesional?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Legalmente puedes intentarlo, pero los errores en el orden o en los plazos son los que acaban generando responsabilidad personal. Acompañarte bien es precisamente lo que evita ese riesgo.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · FORMULARIO -->
+<section class="section formsec" id="form">
+  <div class="wrap form-grid2">
+    <div class="form-copy reveal">
+      <span class="kicker on-dark">Solicita asesoramiento</span>
+      <h2 style="margin-top:14px;">Hablemos para <em>cerrar este capítulo.</em></h2>
+      <p class="lede">Rellena el formulario y te llamamos en menos de 24 horas. La primera conversación es para entender tu situación, evaluar las opciones y decirte con claridad qué implica el proceso.</p>
+      <div class="lead-points" style="margin-top:28px;">
+        <div class="lead-point"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>+87 cierres gestionados</b><p>Experiencia probada en procesos de cierre de todo tipo y tamaño.</p></div></div>
+        <div class="lead-point"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span><div><b>Sin incidencias legales posteriores</b><p>Hacerlo en el orden correcto protege al administrador.</p></div></div>
+        <div class="lead-point"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span><div><b>Respuesta en menos de 24h</b><p>Primera conversación sin coste ni compromiso.</p></div></div>
+      </div>
+      <p class="fine">Más de 87 cierres gestionados. 30+ años acompañando a empresarios en decisiones difíciles.</p>
+    </div>
+    <div class="form-card reveal d1">
+      <span class="fc-badge">Respuesta &lt; 24h</span>
+      <h3>Solicitar asesoramiento gratuito</h3>
+      <p class="sub">Sin coste ni compromiso. Solo para entender tu caso.</p>
+      <form class="fgrid" onsubmit="return false;">
+        <div class="field"><label>Nombre y apellido</label><input type="text" placeholder="Tu nombre" /></div>
+        <div class="field"><label>Teléfono</label><input type="tel" placeholder="600 000 000" /></div>
+        <div class="field full"><label>E-mail</label><input type="email" placeholder="nombre@empresa.com" /></div>
+        <div class="field full"><label>Nombre de la empresa</label><input type="text" placeholder="Tu empresa, S.L." /></div>
+        <div class="field full sel-wrap"><label>¿La empresa sigue operando?</label><select><option>Selecciona una opción</option><option>Sí, todavía opera</option><option>Está parada</option><option>En situación crítica</option></select></div>
+        <div class="field full sel-wrap"><label>¿Tienes avales o deuda personal?</label><select><option>Selecciona una opción</option><option>Sí</option><option>No</option><option>No lo sé</option></select></div>
+        <div class="consent"><input type="checkbox" id="c1" /><label for="c1">Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos.</label></div>
+        <div class="fsub"><button type="submit" class="btn btn-primary btn-lg"><span>Enviar</span></button><span class="fnote">Te llamamos en menos de 24h</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · CTA FINAL -->
+<section class="closer">
+  <image-slot id="ca-closer" shape="rect" fit="cover" placeholder="Foto · ciudad / edificios (banner final)"></image-slot>
+  <div class="closer-mesh"></div>
+  <div class="wrap closer-inner reveal">
+    <h2>Cerrar bien es el primer paso para <em>lo que viene después.</em></h2>
+    <p>Sin coste, sin compromiso. Solo para entender tu caso y decirte qué opciones tienes.</p>
+    <div class="hero-cta">
+      <a href="#form" class="btn btn-primary btn-lg"><span>Pide una primera reunión</span></a>
+      <a href="tel:+34634283089" class="btn btn-ghost-dark btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>634 28 30 89</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-top">
+    <div class="foot-brand"><a class="logo" href="sg-home-v1.html"><svg class="logo-mark" viewBox="0 0 40 40"><rect width="40" height="40" rx="11" fill="url(#lg)"/><path d="M26.5 14.5C25 12.8 22.7 12 20.2 12c-3.4 0-5.7 1.6-5.7 4 0 5.6 12.9 2.8 12.9 8.7 0 2.7-2.7 4.5-6.6 4.5-2.9 0-5.4-1-6.8-2.9" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="logo-text"><b>Sanbla</b><span>Consultoría</span></span></a><p class="foot-about">Un equipo humano con más de 30 años de experiencia, aportando conocimiento, criterio y resultados contrastados.</p></div>
+    <div class="foot-col"><h4>Sanbla</h4><ul><li><a href="sg-reestructuracion-v2.html">Reestructuración empresarial</a></li><li><a href="sg-concurso-acreedores-v2.html">Concurso de acreedores</a></li><li><a href="sg-vender-empresa-v2.html">Vender mi empresa</a></li><li><a href="sg-catalogo-v2.html">Comprar una empresa</a></li><li><a href="sg-sobre-nosotros-v2.html">Sobre nosotros</a></li><li><a href="sg-decisiones-reales-v2.html">Decisiones reales</a></li></ul></div>
+    <div class="foot-col"><h4>Empresa</h4><ul><li><a href="sg-sobre-nosotros-v2.html">Sobre nosotros</a></li><li><a href="sg-sobre-javier-v2.html">Javier Sánchez</a></li><li><a href="sg-contacto-v2.html">Contacto</a></li></ul></div>
+    <div class="foot-col"><h4 style="font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-faint);font-weight:500;">Despachos</h4><div style="font-size:14px;color:var(--on-dark-muted);line-height:1.6;margin-top:16px;"><b style="color:#fff;display:block;margin-bottom:4px;">Barcelona</b>932 387 130<br/><a href="mailto:info@sanbla.com" style="text-decoration:underline;text-underline-offset:2px;">info@sanbla.com</a><br/>Via Augusta 2bis 5 · 08006<br/><br/><b style="color:#fff;display:block;margin-bottom:4px;">Madrid</b>910 192 613<br/><a href="mailto:info@sanbla.com" style="text-decoration:underline;text-underline-offset:2px;">info@sanbla.com</a><br/>J.I. Luca de Tena 1 · 28047</div></div>
+  </div>
+  <div class="wrap footer-bottom"><span>© 2026 Sanbla. Todos los derechos reservados.</span><div class="bot-links"><a href="#">Aviso Legal</a><a href="#">Política de Privacidad y Cookies</a><a href="#">Configurar</a></div></div>
+</footer>
+
+<div class="mobile-cta"><a href="#form" class="btn btn-primary"><span>Pide una primera reunión</span></a></div>
+
+<template id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="tg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#36D8BD"/><stop offset="1" stop-color="#0B6E63"/></linearGradient></defs><rect width="100" height="100" rx="22" fill="#081214"/><path d="M62 38C58 33 52 31 46 31c-9 0-15 5-15 11 0 14 32 7 32 22 0 7-7 12-17 12-7 0-14-3-17-7" fill="none" stroke="url(#tg)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg></template>
+
+<script src="sanbla/image-slot.js"></script>
+<script src="sanbla/premium.js"></script>
+<script>
+  document.querySelectorAll('[data-rail]').forEach(function(rail){
+    var prev=document.querySelector('[data-rail-prev="'+rail.dataset.rail+'"]');
+    var next=document.querySelector('[data-rail-next="'+rail.dataset.rail+'"]');
+    var step=function(){var c=rail.querySelector('*');return c?c.getBoundingClientRect().width+20:380;};
+    if(prev)prev.addEventListener('click',function(){rail.scrollBy({left:-step(),behavior:'smooth'});});
+    if(next)next.addEventListener('click',function(){rail.scrollBy({left:step(),behavior:'smooth'});});
+  });
+</script>
+</body>
+</html>
