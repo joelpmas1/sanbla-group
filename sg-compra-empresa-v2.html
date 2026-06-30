@@ -2,23 +2,24 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Venta de empresa | Vende tu empresa al mejor precio | Sanbla</title>
-<meta name="description" content="Vendemos tu empresa preparada y al mejor precio: valoración real, comprador adecuado y defensa del precio en la negociación. Sin prisas. Pide una primera reunión." />
+<title>Compra de empresa | Compra una empresa con criterio | Sanbla</title>
+<meta name="description" content="Te ayudamos a comprar una empresa con criterio: filtramos oportunidades, hacemos la due diligence y te acompañamos en la negociación y la entrada. Pide una reunión." />
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="sanbla/styles-v2.css" />
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-  {"@type":"Question","name":"¿Cuánto vale mi empresa?","acceptedAnswer":{"@type":"Answer","text":"Depende del sector, los márgenes, la recurrencia de ingresos y el riesgo de traspaso. Hacemos una valoración real basada en datos, no en expectativas. Te la explicamos en la primera reunión, sin coste."}},
-  {"@type":"Question","name":"¿Cuánto tarda el proceso?","acceptedAnswer":{"@type":"Answer","text":"Entre 6 y 12 meses de media, dependiendo del tipo de empresa y del mercado. Empezamos preparando la empresa antes de salir, lo que mejora el precio y reduce el tiempo en el mercado."}},
-  {"@type":"Question","name":"¿El proceso es confidencial?","acceptedAnswer":{"@type":"Answer","text":"Sí. Todos los compradores potenciales firman un acuerdo de confidencialidad antes de recibir cualquier información sobre tu empresa."}},
-  {"@type":"Question","name":"¿Y si no encuentro comprador?","acceptedAnswer":{"@type":"Answer","text":"El 73,5% de nuestros mandatos se cierran con éxito. Si el mercado no responde al precio esperado, te lo decimos con claridad y analizamos las opciones: ajustar precio, mejorar la empresa o esperar el momento adecuado."}},
-  {"@type":"Question","name":"¿Cuánto cobra Sanbla?","acceptedAnswer":{"@type":"Answer","text":"Trabajamos con un fee de éxito: cobramos cuando la operación se cierra. Te explicamos la estructura exacta en la primera reunión, sin compromiso."}}
+  {"@type":"Question","name":"¿Cómo sé que no estoy comprando un problema?","acceptedAnswer":{"@type":"Answer","text":"Hacemos una due diligence completa: verificamos los números, analizamos riesgos ocultos, revisamos contratos y pasivos no evidentes. No compramos lo que pone el vendedor — verificamos lo que hay detrás."}},
+  {"@type":"Question","name":"¿Cuánto cuesta el proceso?","acceptedAnswer":{"@type":"Answer","text":"Depende del volumen y complejidad de la operación. Te lo explicamos con transparencia en la primera reunión, que es gratuita y sin compromiso."}},
+  {"@type":"Question","name":"¿Tenéis empresas en venta ahora mismo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Gestionamos un catálogo activo de mandatos de venta. En la primera conversación te decimos si hay oportunidades que encajen con tu perfil y presupuesto."}},
+  {"@type":"Question","name":"¿Necesito experiencia previa para comprar una empresa?","acceptedAnswer":{"@type":"Answer","text":"No. Muchos de los compradores que acompañamos son directivos, inversores o empresarios de otro sector. Te guiamos en todo el proceso para que tomes la decisión con plena información."}},
+  {"@type":"Question","name":"¿Cuánto tarda el proceso?","acceptedAnswer":{"@type":"Answer","text":"Entre 4 y 10 meses de media, según la disponibilidad de oportunidades y la complejidad de la due diligence. En la primera conversación te damos una estimación para tu caso."}}
 ]}
 </script>
 
 <style>
+  /* Marketplace vs Sanbla comparison */
   .vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line-2);margin-top:48px;}
   .vs-col{padding:32px 36px;}
   .vs-col.left{background:var(--paper-2);border-right:1px solid var(--line-2);}
@@ -36,6 +37,7 @@
   .vs-col.right .vi{background:rgba(44,162,164,.2);}
   .vs-col.left .vi svg{stroke:#999;}
   .vs-col.right .vi svg{stroke:var(--teal-300);}
+  /* Cases */
   .casos-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;}
   .rail-nav{display:flex;gap:10px;}
   .rail-nav button{width:46px;height:46px;border-radius:100px;border:1px solid var(--line-2);background:var(--surface);color:var(--text-strong);cursor:pointer;display:grid;place-items:center;transition:all .15s ease;}
@@ -51,6 +53,7 @@
   .caso-card .cs-tag{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--teal-300);}
   .caso-card h3{color:#fff;font-size:22px;font-weight:500;margin-top:auto;padding-top:84px;line-height:1.18;}
   .caso-card p{color:rgba(255,255,255,.78);font-size:13px;margin-top:10px;}
+  /* Process */
   .proc{max-width:860px;margin:56px auto 0;position:relative;}
   .proc::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,rgba(18,168,146,.35) 15%,rgba(18,168,146,.35) 85%,transparent);transform:translateX(-50%);}
   .pstep{display:grid;grid-template-columns:1fr 1fr;position:relative;margin-bottom:4px;}
@@ -61,11 +64,13 @@
   .pnum{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-strong);}
   .pstep h3{font-size:21px;font-weight:500;margin-top:8px;}
   .pstep p{margin-top:10px;color:var(--muted);font-size:15px;max-width:38ch;line-height:1.55;}
+  /* Numband */
   .numband{position:relative;border-radius:var(--r-2xl);overflow:hidden;padding:clamp(40px,5vw,64px);background:var(--ink-850);color:#fff;display:grid;grid-template-columns:1.3fr 1fr;gap:44px;align-items:center;}
   .numband::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 100% at 0% 100%,rgba(18,168,146,.3),transparent 60%);pointer-events:none;}
   .numband h2{position:relative;color:#fff;font-size:clamp(26px,3.2vw,42px);font-weight:500;}
   .numband h2 em{font-style:italic;color:var(--teal-300);}
   .numband p{position:relative;color:var(--on-dark-muted);font-size:15.5px;line-height:1.6;}
+  /* Form */
   .formsec{background:var(--ink-950);position:relative;overflow:hidden;}
   .formsec::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 70% at 5% 0%,rgba(18,168,146,.2),transparent 55%);}
   .form-grid2{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(40px,6vw,90px);align-items:start;}
@@ -108,14 +113,14 @@
 
 <!-- 1 · HERO -->
 <section class="hero">
-  <div class="hero-media"><image-slot id="ve-hero" shape="rect" fit="cover" placeholder="Foto hero · handshake / reunión de venta"></image-slot></div>
+  <div class="hero-media"><image-slot id="ce-hero" shape="rect" fit="cover" placeholder="Foto hero · apretón de manos / reunión de compra"></image-slot></div>
   <div class="hero-scrim"></div><div class="hero-mesh"></div>
-  <svg class="hero-motif" viewBox="0 0 600 800" fill="none" aria-hidden="true" preserveAspectRatio="xMaxYMid slice"><g stroke="url(#lg)" stroke-width="1.2" opacity="0.5"><path d="M620 60C420 120 460 260 300 320 140 380 180 520 -20 580"/><path d="M620 140C420 200 460 340 300 400 140 460 180 600 -20 660"/></g></svg>
+  <svg class="hero-motif" viewBox="0 0 600 800" fill="none" aria-hidden="true" preserveAspectRatio="xMaxYMid slice"><g stroke="url(#lg)" stroke-width="1.2" opacity="0.5"><path d="M620 60C420 120 460 260 300 320 140 380 180 520 -20 580"/><path d="M620 140C420 200 460 340 300 400 140 460 180 600 -20 660"/><path d="M620 -20C420 40 460 180 300 240 140 300 180 440 -20 500"/></g></svg>
   <div class="wrap hero-inner">
     <div class="hero-content">
-      <span class="kicker">Venta de empresa</span>
-      <h1>Venta de empresa: vender bien no es vender rápido, <span class="accent"><em>es vender preparado.</em></span></h1>
-      <p class="hero-lede">Analizamos tu negocio, construimos el relato financiero real, encontramos al comprador adecuado y defendemos tu precio en la negociación. De principio a fin, sin intermediarios que busquen cerrar rápido a tu costa.</p>
+      <span class="kicker">Compra de empresa</span>
+      <h1>Compra de empresa: comprar una empresa es comprar un flujo de caja, <span class="accent"><em>no un sueño.</em></span></h1>
+      <p class="hero-lede">Filtramos oportunidades, analizamos los números reales, hacemos la due diligence y te acompañamos en la negociación y la entrada. Para que compres sabiendo exactamente lo que adquieres.</p>
       <div class="hero-cta">
         <a href="#form" class="btn btn-primary btn-lg"><span>Pide una primera reunión</span></a>
         <a href="tel:+34634283089" class="btn btn-ghost-dark btn-lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg>634 28 30 89</a>
@@ -127,9 +132,9 @@
 <!-- 2 · STATS -->
 <section class="stats">
   <div class="wrap stats-grid">
-    <div class="stat reveal"><div class="num" data-count="34" data-prefix="+">0</div><div class="lbl">Operaciones de venta ejecutadas</div></div>
-    <div class="stat reveal d1"><div class="num">73,5<span class="u">%</span></div><div class="lbl">De mandatos cerrados con éxito</div></div>
-    <div class="stat reveal d2"><div class="num">6–12 <span class="u">meses</span></div><div class="lbl">Tiempo medio del proceso</div></div>
+    <div class="stat reveal"><div class="num" data-count="22" data-prefix="+">0</div><div class="lbl">Operaciones de compra acompañadas</div></div>
+    <div class="stat reveal d1"><div class="num">58,3<span class="u">%</span></div><div class="lbl">Superaron proyecciones iniciales</div></div>
+    <div class="stat reveal d2"><div class="num">91,4<span class="u">%</span></div><div class="lbl">Retuvieron equipo clave tras la compra</div></div>
     <div class="stat reveal d3"><div class="num" data-count="30" data-suffix="+">0</div><div class="lbl">Años de experiencia</div></div>
   </div>
 </section>
@@ -138,10 +143,10 @@
 <section class="section" style="background:var(--paper-2);">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="kicker center">Cómo se vende</span>
-      <h2>¿Qué es y cómo se vende <em>una empresa?</em></h2>
-      <p class="lede">Vender una empresa es un proceso, no un anuncio: valorar el negocio con datos reales, construir un relato financiero creíble, encontrar al comprador adecuado y negociar para defender el precio.</p>
-      <p class="lede" style="margin-top:14px;">Bien hecho lleva entre 6 y 12 meses y empieza mucho antes de salir al mercado, preparando la empresa para que valga más cuando llegue el comprador. Estas son situaciones reales en las que hemos estado:</p>
+      <span class="kicker center">Cómo se compra</span>
+      <h2>¿Qué es comprar una empresa <em>con criterio?</em></h2>
+      <p class="lede">Comprar una empresa es adquirir un flujo de caja, no una idea: definir qué buscas, filtrar oportunidades reales, verificar los números con una due diligence y entrar acompañado en la negociación.</p>
+      <p class="lede" style="margin-top:14px;">No es buscar en un portal y confiar en lo que pone el vendedor: es descartar lo que no encaja hasta encontrar lo que sí, sabiendo exactamente qué adquieres. Estas son situaciones reales en las que hemos estado:</p>
     </div>
   </div>
 </section>
@@ -152,39 +157,39 @@
     <div class="casos-head reveal">
       <div class="section-head" style="margin:0;"><span class="kicker">Casos reales</span><h2 style="margin-top:14px;">Situaciones reales con <em>decisiones reales</em></h2></div>
       <div class="rail-nav">
-        <button data-rail-prev="ve1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
-        <button data-rail-next="ve1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+        <button data-rail-prev="ce1" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <button data-rail-next="ce1" aria-label="Siguiente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
       </div>
     </div>
-    <div class="casos-rail" data-rail="ve1">
-      <a class="caso-card" href="sg-articulo-v2.html"><image-slot id="ve-c1" shape="rect" fit="cover" placeholder="Foto · clínica veterinaria"></image-slot><span class="cs-tag">Venta de empresa</span><h3>Una clínica veterinaria vendida al 96% de la valoración inicial</h3><p>Veterinaria · 9 empleados · Barcelona · 780.000 €/año</p></a>
-      <a class="caso-card teal" href="sg-articulo-v2.html"><image-slot id="ve-c2" shape="rect" fit="cover" placeholder="Foto · empresa textil"></image-slot><span class="cs-tag">Venta de empresa</span><h3>Un empresario textil que vendió preparado después de 30 años</h3><p>Textil · 34 empleados · Sabadell · 3.100.000 €/año</p></a>
-      <a class="caso-card" href="sg-articulo-v2.html"><image-slot id="ve-c3" shape="rect" fit="cover" placeholder="Foto · empresa packaging"></image-slot><span class="cs-tag">Venta de empresa</span><h3>Una empresa de packaging que encontró al comprador en 4 meses</h3><p>Packaging · 19 empleados · Zaragoza · 2.200.000 €/año</p></a>
+    <div class="casos-rail" data-rail="ce1">
+      <a class="caso-card" href="sg-articulo-v2.html"><image-slot id="ce-c1" shape="rect" fit="cover" placeholder="Foto · grupo familiar / taller"></image-slot><span class="cs-tag">Compra de empresa</span><h3>Un grupo familiar que compró el taller de su competidor con los números verificados</h3><p>Automoción · 8 empleados · Girona · 920.000 €/año</p></a>
+      <a class="caso-card teal" href="sg-articulo-v2.html"><image-slot id="ce-c2" shape="rect" fit="cover" placeholder="Foto · directivo multinacional"></image-slot><span class="cs-tag">Compra de empresa</span><h3>Un directivo que salió de una multinacional y compró su primera empresa</h3><p>Logística · 31 empleados · Madrid · 2.800.000 €/año</p></a>
+      <a class="caso-card" href="sg-articulo-v2.html"><image-slot id="ce-c3" shape="rect" fit="cover" placeholder="Foto · empresa alimentación"></image-slot><span class="cs-tag">Compra de empresa</span><h3>Un empresario de alimentación que amplió con una empresa complementaria</h3><p>Alimentación · 17 empleados · Valencia · 1.600.000 €/año</p></a>
     </div>
   </div>
 </section>
 
-<!-- 5 · BROKER VS SANBLA -->
+<!-- 5 · MARKETPLACE VS SANBLA -->
 <section class="section" style="background:var(--paper-2);">
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="kicker center">Por qué Sanbla</span>
-      <h2>No somos intermediarios que publican un anuncio <em>y esperan.</em></h2>
+      <h2>No vendemos oportunidades. <em>Filtramos decisiones.</em></h2>
     </div>
     <div class="vs-grid reveal">
       <div class="vs-col left">
-        <div class="vs-head">Un broker típico</div>
-        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>Publica y espera a que aparezca alguien</div>
-        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>Quiere cerrar rápido, no al mejor precio</div>
-        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>No prepara la empresa antes de vender</div>
-        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>Negocia por ti sin defender tu posición</div>
+        <div class="vs-head">Un portal o marketplace</div>
+        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>Publica todo sin verificación</div>
+        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>Sin acompañamiento en due diligence</div>
+        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>Negocias solo frente al vendedor</div>
+        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>Volumen, no criterio</div>
       </div>
       <div class="vs-col right">
-        <div class="vs-head">Sanbla · Venta con criterio</div>
-        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Preparamos la empresa antes de salir al mercado</div>
-        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Defendemos tu precio en la negociación</div>
-        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Filtramos compradores: calidad, no cantidad</div>
-        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Decides tú, con toda la información</div>
+        <div class="vs-head">Sanbla · Compra con criterio</div>
+        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Filtramos oportunidades con criterio financiero</div>
+        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Due diligence completa: números, riesgos, contratos</div>
+        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Te acompañamos en negociación y entrada</div>
+        <div class="vs-item"><span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>De principio a fin: tu interés, no el del vendedor</div>
       </div>
     </div>
   </div>
@@ -195,13 +200,13 @@
   <div class="wrap">
     <div class="section-head center reveal">
       <span class="kicker center">El proceso</span>
-      <h2>Un proceso claro para vender tu empresa con <em>método y control</em></h2>
+      <h2>Un proceso estructurado para comprar una empresa <em>con criterio</em></h2>
     </div>
     <div class="proc reveal">
-      <div class="pstep"><div class="pcard"><span class="pnum">01</span><h3>Análisis y preparación</h3><p>Valoramos tu empresa con datos reales y la preparamos: ordenamos el relato financiero, identificamos lo que puede aumentar su valor antes de salir.</p></div></div>
-      <div class="pstep"><div class="pcard"><span class="pnum">02</span><h3>Estrategia de venta</h3><p>Definimos el perfil de comprador ideal, el precio objetivo y el enfoque de la operación. Salimos al mercado preparados, no a ver qué pasa.</p></div></div>
-      <div class="pstep"><div class="pcard"><span class="pnum">03</span><h3>Ejecución y negociación</h3><p>Gestionamos el proceso con compradores cualificados, facilitamos la due diligence y defendemos tu precio y condiciones en la negociación.</p></div></div>
-      <div class="pstep"><div class="pcard"><span class="pnum">04</span><h3>Cierre y transición</h3><p>Cerramos la operación con todas las garantías y acompañamos la transición para que el traspaso sea limpio y el negocio siga funcionando.</p></div></div>
+      <div class="pstep"><div class="pcard"><span class="pnum">01</span><h3>Definir qué buscas</h3><p>Analizamos tu perfil, capacidad inversora, sector y objetivos. Definimos el mandato de búsqueda con criterios claros.</p></div></div>
+      <div class="pstep"><div class="pcard"><span class="pnum">02</span><h3>Análisis y filtrado de oportunidades</h3><p>Identificamos empresas en venta que encajan con tu mandato — tanto del catálogo activo como del mercado — y descartamos las que no tienen sentido.</p></div></div>
+      <div class="pstep"><div class="pcard"><span class="pnum">03</span><h3>Due diligence y decisión</h3><p>Verificamos los números reales, analizamos riesgos ocultos y te damos criterio para decidir con toda la información. Decides tú, con datos.</p></div></div>
+      <div class="pstep"><div class="pcard"><span class="pnum">04</span><h3>Entrada y acompañamiento post-compra</h3><p>Te acompañamos en la negociación final, el cierre y los primeros meses de gestión para que la empresa arranque bien bajo tu dirección.</p></div></div>
     </div>
     <div class="center-cta reveal"><a href="#form" class="btn btn-primary btn-lg"><span>Pide una primera reunión</span></a></div>
   </div>
@@ -211,8 +216,8 @@
 <section class="section" style="background:var(--paper-2);">
   <div class="wrap">
     <div class="numband reveal">
-      <h2>Nuestros clientes consiguen de media el <em>93%</em> del valor de valoración de su empresa.</h2>
-      <p>No vendemos rápido. Vendemos preparados. Preparar antes de salir al mercado es lo que hace que el precio se sostenga en la negociación.</p>
+      <h2>El <em>58,3%</em> de las adquisiciones que acompañamos superaron las proyecciones iniciales del comprador.</h2>
+      <p>No compramos lo que parece bueno. Compramos lo que los números confirman que es bueno. Y acompañamos la entrada para que lo siga siendo.</p>
     </div>
   </div>
 </section>
@@ -222,11 +227,11 @@
   <div class="wrap">
     <div class="section-head reveal"><span class="kicker">Preguntas frecuentes</span><h2>Preguntas que nos hacen <em>siempre</em></h2></div>
     <div class="faq-list reveal">
-      <div class="faq-item"><button class="faq-q">¿Cuánto vale mi empresa?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Depende del sector, los márgenes, la recurrencia de ingresos y el riesgo de traspaso. Hacemos una valoración real basada en datos, no en expectativas. Te la explicamos en la primera reunión, sin coste.</div></div></div>
-      <div class="faq-item"><button class="faq-q">¿Cuánto tarda el proceso?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Entre 6 y 12 meses de media. Empezamos preparando la empresa antes de salir, lo que mejora el precio y reduce el tiempo en el mercado.</div></div></div>
-      <div class="faq-item"><button class="faq-q">¿El proceso es confidencial?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Sí. Todos los compradores potenciales firman un acuerdo de confidencialidad antes de recibir cualquier información sobre tu empresa.</div></div></div>
-      <div class="faq-item"><button class="faq-q">¿Y si no encuentro comprador?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">El 73,5% de nuestros mandatos se cierran con éxito. Si el mercado no responde al precio esperado, te lo decimos con claridad y analizamos las opciones juntos.</div></div></div>
-      <div class="faq-item"><button class="faq-q">¿Cuánto cobra Sanbla?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Trabajamos con un fee de éxito: cobramos cuando la operación se cierra. Te explicamos la estructura exacta en la primera reunión, sin compromiso.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Cómo sé que no estoy comprando un problema?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Hacemos una due diligence completa: verificamos los números, analizamos riesgos ocultos, revisamos contratos y pasivos no evidentes. No compramos lo que pone el vendedor — verificamos lo que hay detrás.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Cuánto cuesta el proceso?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Depende del volumen y complejidad de la operación. Te lo explicamos con transparencia en la primera reunión, que es gratuita y sin compromiso.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Tenéis empresas en venta ahora mismo?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Sí. Gestionamos un catálogo activo de mandatos de venta. En la primera conversación te decimos si hay oportunidades que encajen con tu perfil y presupuesto.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Necesito experiencia previa para comprar una empresa?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">No. Muchos de los compradores que acompañamos son directivos, inversores o empresarios de otro sector. Te guiamos en todo el proceso para que tomes la decisión con plena información.</div></div></div>
+      <div class="faq-item"><button class="faq-q">¿Cuánto tarda el proceso?<span class="faq-toggle"></span></button><div class="faq-a"><div class="faq-a-inner">Entre 4 y 10 meses de media, según la disponibilidad de oportunidades y la complejidad de la due diligence. En la primera conversación te damos una estimación para tu caso.</div></div></div>
     </div>
   </div>
 </section>
@@ -236,14 +241,14 @@
   <div class="wrap form-grid2">
     <div class="form-copy reveal">
       <span class="kicker on-dark">Solicita asesoramiento</span>
-      <h2 style="margin-top:14px;">Antes de salir al mercado, <em>hablemos.</em></h2>
-      <p class="lede">Rellena el formulario y te llamamos en menos de 24 horas. La primera conversación es para entender tu situación y decirte con criterio cuándo y cómo vender tu empresa.</p>
+      <h2 style="margin-top:14px;">Analicemos tu <em>objetivo de compra.</em></h2>
+      <p class="lede">Rellena el formulario y te llamamos en menos de 24 horas. La primera conversación es para entender qué buscas, tu capacidad y tu horizonte. Sin coste, sin compromiso.</p>
       <div class="lead-points" style="margin-top:28px;">
-        <div class="lead-point"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Preparamos antes de salir</b><p>Más valor cuando llega el comprador.</p></div></div>
-        <div class="lead-point"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span><div><b>Defendemos tu precio</b><p>93% del valor de valoración, de media.</p></div></div>
+        <div class="lead-point"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.6-7 9-4-1.4-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Filtramos con criterio</b><p>No compras un problema.</p></div></div>
+        <div class="lead-point"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7L9 18l-5-5"/></svg></span><div><b>Due diligence completa</b><p>Sabes exactamente qué adquieres.</p></div></div>
         <div class="lead-point"><span class="pi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg></span><div><b>Respuesta en menos de 24h</b><p>Primera conversación sin coste ni compromiso.</p></div></div>
       </div>
-      <p class="fine">+34 operaciones de venta ejecutadas. 30+ años acompañando a empresarios.</p>
+      <p class="fine">+22 operaciones de compra acompañadas. 30+ años en valoración y adquisición de empresas.</p>
     </div>
     <div class="form-card reveal d1">
       <span class="fc-badge">Respuesta &lt; 24h</span>
@@ -253,10 +258,9 @@
         <div class="field"><label>Nombre y apellido</label><input type="text" placeholder="Tu nombre" /></div>
         <div class="field"><label>Teléfono</label><input type="tel" placeholder="600 000 000" /></div>
         <div class="field full"><label>E-mail</label><input type="email" placeholder="nombre@empresa.com" /></div>
-        <div class="field full"><label>Nombre de la empresa</label><input type="text" placeholder="Tu empresa, S.L." /></div>
-        <div class="field full sel-wrap"><label>Facturación anual</label><select><option>Selecciona una opción</option><option>Menos de 500.000 €</option><option>Entre 500.000 € y 2 M€</option><option>Entre 2 M€ y 5 M€</option><option>Más de 5 M€</option></select></div>
-        <div class="field full sel-wrap"><label>¿Ha intentado vender antes?</label><select><option>Selecciona una opción</option><option>No, es la primera vez</option><option>Sí, sin éxito</option><option>Sí, pero no llegó a buen puerto</option></select></div>
-        <div class="field full sel-wrap"><label>Plazo deseado para la venta</label><select><option>Selecciona una opción</option><option>Lo antes posible</option><option>En los próximos 12 meses</option><option>Sin prisa, cuando sea el momento</option></select></div>
+        <div class="field full sel-wrap"><label>Presupuesto estimado de inversión</label><select><option>Selecciona una opción</option><option>Menos de 200.000 €</option><option>Entre 200.000 € y 500.000 €</option><option>Entre 500.000 € y 2 M€</option><option>Más de 2 M€</option></select></div>
+        <div class="field full sel-wrap"><label>¿Tiene experiencia gestionando empresas?</label><select><option>Selecciona una opción</option><option>Sí, como propietario</option><option>Sí, como directivo</option><option>No, es mi primera operación</option></select></div>
+        <div class="field full sel-wrap"><label>¿Qué buscas?</label><select><option>Selecciona una opción</option><option>Empresa en un sector concreto</option><option>Cualquier sector con buenos números</option><option>Empresa complementaria a la mía</option><option>Aún no lo tengo claro</option></select></div>
         <div class="consent"><input type="checkbox" id="c1" /><label for="c1">Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos.</label></div>
         <div class="fsub"><button type="submit" class="btn btn-primary btn-lg"><span>Enviar</span></button><span class="fnote">Te llamamos en menos de 24h</span></div>
       </form>
@@ -266,10 +270,10 @@
 
 <!-- 10 · CTA FINAL -->
 <section class="closer">
-  <image-slot id="ve-closer" shape="rect" fit="cover" placeholder="Foto · ciudad / edificios (banner final)"></image-slot>
+  <image-slot id="ce-closer" shape="rect" fit="cover" placeholder="Foto · ciudad / edificios (banner final)"></image-slot>
   <div class="closer-mesh"></div>
   <div class="wrap closer-inner reveal">
-    <h2>Tu empresa merece venderse a su precio real. <em>No al primero que aparezca.</em></h2>
+    <h2>Comprar bien empieza por saber qué buscas. <em>Y qué descartar.</em></h2>
     <p>Sin coste, sin compromiso. Solo para entender tu caso y decirte qué opciones tienes.</p>
     <div class="hero-cta">
       <a href="#form" class="btn btn-primary btn-lg"><span>Pide una primera reunión</span></a>
